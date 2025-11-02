@@ -1,0 +1,42 @@
+ body{
+    background-color :rgb(70, 155, 204);
+ }
+ 
+ input{
+text-align: center;
+ 
+  
+}
+
+ button{
+  border : none;
+  color :rgb(112, 54, 112);
+  padding: 10px 20px;/* property is used to define the space between the text and the border of a button:*/
+  text-align: center;
+
+  font-size: 14px;
+  
+  border-radius: 12px; /*property is used to add rounded corners to a button:*/
+}
+
+ #popup{
+   display:none;
+   position: fixed;
+   top: 50%;
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    
+ }
+
+
+
+
+ 
+ h1{ 
+    background-color: lightblue ; 
+    text-align: center;
+    
+  text-decoration-style:  dashed;
+text-transform: uppercase;
+text-shadow: 2px 2px;
+}

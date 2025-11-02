@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document </title>
+    <link rel="stylesheet" href="page2.css">
+   <!-- <script   src="page3.js" defer>  </script>-->
+</head>
+<body>
+    <h1>  Welcome to random name chooser  </h1>
+
+    <input  id="txt"    type="text"  placeholder="    enter un nom">
+    <button id="but1"  > Ajouter!</button> <br><br>
+    <div id="d1">
+<ul  id="liste">
+     
+
+
+</ul>
+
+    </div>
+    
+    <br>
+     <button id="but2"  > choiser Nom</button> <br><br>
+<br>
+<div id="popup">
+<p> le nom choisie est :</p>
+<button> suivant!</button>
+</div>
+
+</body>
+<script> let noms = [];
+const txt = document.getElementById("txt");
+const but1 = document.getElementById("but1");
+const but2 = document.getElementById("but2");
+const liste = document.getElementById("liste");
+const popup = document.getElementById("popup");
+
+but1.addEventListener("click", function() {
+  if (txt.value !== "") {
+    const li = document.createElement("li");
+    li.textContent = txt.value;
+    liste.appendChild(li);
+    noms.push(txt.value);
+    txt.value = "";
+  } else {
+    alert("Saisie le nom !");
+  }
+});
+
+but2.addEventListener("click", function() {
+  if (noms.length === 0) {
+    alert("Aucun nom à choisir !");
+    return;
+  }
+
+  const randomIndex = Math.floor(Math.random() * noms.length);
+  const nomChoisi = noms[randomIndex];
+  popup.innerHTML = `
+    <p>Le nom choisi est : <strong>${nomChoisi}</strong></p>
+    <button id="next">Suivant</button>
+  `;
+  popup.style.display = "block";
+
+  document.getElementById("next").addEventListener("click", function() {
+    noms.splice(randomIndex, 1); // supprimer le nom choisi
+    liste.removeChild(liste.children[randomIndex]);
+    popup.style.display = "none";
+  });
+});
+</script>
+</html>
