@@ -28,7 +28,7 @@ but1.addEventListener("click", function() {
   txt.focus();
 });
 
-
+//test git
 but2.addEventListener("click", function() {
   if (noms.length === 0) {
     alert("Aucun nom à choisir !");
